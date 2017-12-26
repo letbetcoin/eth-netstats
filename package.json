@@ -39,13 +39,11 @@
   "bugs": {
     "url": "https://github.com/cubedro/eth-netstats/issues"
   },
-  "authors": [
-    {
-      "name": "Marian Oancea",
-      "email": "marian@ethdev.com",
-      "url": "https://github.com/cubedro"
-    }
-  ],
+  "authors": [{
+    "name": "Marian Oancea",
+    "email": "marian@ethdev.com",
+    "url": "https://github.com/cubedro"
+  }],
   "license": "LGPL-3.0",
   "devDependencies": {}
 }
