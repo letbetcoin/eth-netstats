@@ -40,5 +40,5 @@
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 // ga('create', 'UA-68390837-2', 'auto');
-ga('create', 'UA-80834434-1', 'auto');
+ga('create', 'UA-111806920-1', 'auto');
 ga('send', 'pageview');
