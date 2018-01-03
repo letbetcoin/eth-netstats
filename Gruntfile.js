@@ -65,7 +65,7 @@ var styles_lite = [
 	'style.css'
 ];
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		clean: {
@@ -102,8 +102,7 @@ module.exports = function(grunt) {
 		},
 		copy: {
 			build: {
-				files: [
-					{
+				files: [{
 						expand: true,
 						cwd: 'src/fonts/',
 						src: ['minimal-*.*'],
@@ -115,6 +114,13 @@ module.exports = function(grunt) {
 						cwd: 'src/images/',
 						src: ['*.ico'],
 						dest: 'dist/',
+						filter: 'isFile'
+					},
+					{
+						expand: true,
+						cwd: 'src/images/',
+						src: ['*.*'],
+						dest: 'dist/images/',
 						filter: 'isFile'
 					},
 					{
@@ -133,8 +139,7 @@ module.exports = function(grunt) {
 				]
 			},
 			build_lite: {
-				files: [
-					{
+				files: [{
 						expand: true,
 						cwd: 'src-lite/fonts/',
 						src: ['minimal-*.*'],
@@ -192,7 +197,7 @@ module.exports = function(grunt) {
 				src: vendor,
 				dest: 'dist/js/vendor.min.js'
 			},
-			scripts : {
+			scripts: {
 				options: {
 					separator: ';\n',
 				},
@@ -222,7 +227,7 @@ module.exports = function(grunt) {
 				src: vendor_lite,
 				dest: 'dist-lite/js/vendor.min.js'
 			},
-			scripts_lite : {
+			scripts_lite: {
 				options: {
 					separator: ';\n',
 				},
@@ -275,6 +280,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['clean:build', 'clean:cleanup_js', 'clean:cleanup_css', 'jade:build', 'copy:build', 'cssmin:build', 'concat:vendor', 'concat:scripts', 'uglify:app', 'concat:netstats', 'concat:css', 'clean:cleanup_js', 'clean:cleanup_css']);
 	grunt.registerTask('lite', ['clean:build_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite', 'jade:build_lite', 'copy:build_lite', 'cssmin:build_lite', 'concat:vendor_lite', 'concat:scripts_lite', 'uglify:app_lite', 'concat:netstats_lite', 'concat:css_lite', 'clean:cleanup_js_lite', 'clean:cleanup_css_lite']);
-	grunt.registerTask('build',   'default');
-	grunt.registerTask('all',   ['default', 'lite']);
+	grunt.registerTask('build', 'default');
+	grunt.registerTask('all', ['default', 'lite']);
 };
